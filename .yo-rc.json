@@ -14,7 +14,7 @@
     "devDatabaseType": "h2Disk",
     "enableHibernateCache": true,
     "enableTranslation": true,
-    "entities": [],
+    "entities": ["Kata"],
     "feignClient": null,
     "jhipsterVersion": "8.9.0",
     "jwtSecretKey": "OWNkNmY5MjY2MTRkNmE0NmE0NTMzNGNiNTJjYTYyYmNiNTc3NDE2ODdmNGI4NzJkY2Y3YWI5OWRjNmMzM2YzY2YxYzM2MDRlNTA1MjVjNzg4Y2E3OTExMTE0ZDk3MDgyZmFjZjZlZGFjZGYwZThhZGUwYzAwZWRhYWZjYWRkZmE=",
