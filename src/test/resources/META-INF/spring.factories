@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory = \
+    jstskata.app.config.SqlTestContainersSpringContextCustomizerFactory
