@@ -7,7 +7,7 @@
     "cacheProvider": "caffeine",
     "clientFramework": "angular",
     "clientTestFrameworks": [],
-    "clientTheme": "brite",
+    "clientTheme": "pulse",
     "clientThemeVariant": "dark",
     "creationTimestamp": 1755013028493,
     "databaseType": "sql",
