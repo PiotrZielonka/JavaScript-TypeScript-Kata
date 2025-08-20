@@ -374,16 +374,17 @@ export class KataComponent {
   }
 
   // 33. Live search with debounce
-  // data33: string[] = ['apple', 'banana', 'carrot'];
-  // results33: string[] = this.data33;
-  // private t: any;
+  data33: string[] = ['apple', 'banana', 'carrot'];
+  results33: string[] = this.data33;
+  private t: any;
 
-  // onInput(value: string): void {
-  //   clearTimeout(this.t);
-  //   this.t = setTimeout(() => {
-  //     this.results33 = this.data33.filter(i => i.includes(value ?? ''));
-  //   }, 300);
-  // }
+  onInput(ev: Event): void {
+    const value = (ev.target as HTMLInputElement).value ?? '';
+    clearTimeout(this.t);
+    this.t = setTimeout(() => {
+      this.results33 = this.data33.filter(i => i.includes(value));
+    }, 300);
+  }
 
   // 34. VAT calculator
   vatNet = 0;
