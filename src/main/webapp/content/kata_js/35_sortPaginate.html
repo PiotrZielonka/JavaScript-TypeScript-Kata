@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sort Pagination</title>
+    <style>
+      body { font-family: "Segoe UI", Tahoma, sans-serif; background:#eef2f7; margin:0; padding:20px; }
+      .container { max-width:500px; margin:20px auto; padding:20px; background:#fff; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; }
+      button { background:#007bff; color:#fff; border:none; padding:10px 16px; margin:5px; border-radius:4px; cursor:pointer; transition:background 0.3s; }
+      button:hover { background:#0056b3; }
+      input, textarea, select { width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:4px;  table{width:100%;}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="sort">Sort</button>
+      <button id="prev">Prev</button>
+      <button id="next">Next</button>
+      <table id="tbl"></table>
+    </div>
+    <script>
+      const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let page = 0,
+        asc = true;
+      const tbl = document.getElementById('tbl');
+      function render() {
+        const slice = data.slice(page * 3, page * 3 + 3);
+        tbl.innerHTML = slice.map(i => `<tr><td>${i}</td></tr>`).join('');
+      }
+      document.getElementById('next').addEventListener('click', () => {
+        if ((page + 1) * 3 < data.length) page++;
+        render();
+      });
+      document.getElementById('prev').addEventListener('click', () => {
+        if (page > 0) page--;
+        render();
+      });
+      document.getElementById('sort').addEventListener('click', () => {
+        asc = !asc;
+        data.sort((a, b) => (asc ? a - b : b - a));
+        render();
+      });
+      render();
+    </script>
+  </body>
+</html>

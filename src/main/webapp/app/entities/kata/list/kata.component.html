@@ -1,1 +1,572 @@
-<h1>Works</h1>
+<h1>1. Click counter</h1>
+
+<div class="container">
+  <h1>Click the button!</h1>
+  <div [ngClass]="{ counter: true, animate: animate }">
+    {{ count }}
+  </div>
+  <button (click)="increment()">Click</button>
+  <button (click)="resetCount()">Reset</button>
+</div>
+
+<h1>Click counter Vanilla JS</h1>
+
+<iframe src="/content/kata_js/1_clickCounter.html" width="100%" height="300px"></iframe>
+
+<h1>2. Characters counter Angular</h1>
+
+<div class="container2">
+  <h2>Characters counter</h2>
+  <input type="text" [(ngModel)]="text" (keyup)="countCharacters()" placeholder="Write something..." />
+  <p>Lenghth: {{ characterCount }}</p>
+</div>
+
+<h1>Characters counter Vanilla JS</h1>
+
+<iframe src="/content/kata_js/2_charactersCounter.html" width="100%" height="300px"></iframe>
+
+<h1>3. Add Item to List Angular</h1>
+
+<div class="container3">
+  <h2>Add Item to List</h2>
+
+  <input type="text" [(ngModel)]="newItem" placeholder="Type item name" (keyup.enter)="addItem()" />
+  <button (click)="addItem()">Add</button>
+
+  <ul>
+    <li *ngFor="let item of items; let i = index">
+      {{ item }}
+      <button class="delete-btn" (click)="deleteItem(i)">Delete</button>
+    </li>
+  </ul>
+</div>
+
+<h1>Add Item to List Vanilla JS</h1>
+
+<iframe src="/content/kata_js/3_addItemToList.html" width="100%" height="300px"></iframe>
+
+<h1>4. Simple Login with Mock Angular</h1>
+
+<div class="container4">
+  <input type="text" [(ngModel)]="loginUsername" placeholder="Username" />
+  <input type="password" [(ngModel)]="loginPassword" placeholder="Password" />
+  <button (click)="login()">Login</button>
+  <p>{{ loginMessage }}</p>
+</div>
+
+<h1>Simple Login with Mock Vanilla JS</h1>
+
+<iframe src="/content/kata_js/4_login.html" width="100%" height="300px"></iframe>
+
+<h1>5. Basic Calculator Angular</h1>
+
+<div class="container5">
+  <input type="number" [(ngModel)]="calcA" />
+  <input type="number" [(ngModel)]="calcB" />
+  <button (click)="calculate('add')">Add</button>
+  <button (click)="calculate('sub')">Subtract</button>
+  <button (click)="calculate('mul')">Multiply</button>
+  <button (click)="calculate('div')">Divide</button>
+  <p>Result: {{ calcResult }}</p>
+</div>
+
+<h1>Basic Calculator Vanilla JS</h1>
+
+<iframe src="/content/kata_js/5_basicCalculator.html" width="100%" height="300px"></iframe>
+
+<h1>6. Random Element from Array Angular</h1>
+
+<div class="container6">
+  <button (click)="pickRandom()">Pick Random</button>
+  <p>{{ randomItem }}</p>
+</div>
+
+<h1>Random Element from Array Vanilla JS</h1>
+
+<iframe src="/content/kata_js/6_randomElement.html" width="100%" height="300px"></iframe>
+
+<h1>7. Click fastest game Angular</h1>
+
+<div class="container7" [ngClass]="{ dark: isDark }">
+  <p>{{ gameMessage }}</p>
+  <button (click)="startGame()">Start</button>
+  <button (click)="stopGame()">Stop</button>
+</div>
+
+<h1>Click fastest game Vanilla JS</h1>
+
+<iframe src="/content/kata_js/7_clickFastest.html" width="100%" height="300px"></iframe>
+
+<h1>8. Image gallery with Next photo Angular</h1>
+
+<div class="container8">
+  <img [src]="images[imageIndex]" alt="gallery" />
+  <button (click)="nextImage()">Next photo</button>
+</div>
+
+<h1>Image gallery with Next photo Vanilla JS</h1>
+
+<iframe src="/content/kata_js/8_imageGallery.html" width="100%" height="300px"></iframe>
+
+<h1>9. Light/Dark theme toggle Angular</h1>
+
+<div class="container9" [class.dark]="isDark">
+  <button (click)="toggleTheme()">Toggle Theme</button>
+  <p>Theme: {{ isDark ? 'Dark' : 'Light' }}</p>
+</div>
+
+<h1>Light/Dark theme toggle Vanilla JS</h1>
+
+<iframe src="/content/kata_js/9_themeToggle.html" width="100%" height="300px"></iframe>
+
+<h1>10. Display current time Angular</h1>
+
+<div class="container10">
+  <p>{{ currentTime }}</p>
+</div>
+
+<h1>Display current time Vanilla JS</h1>
+
+<iframe src="/content/kata_js/10_currentTime.html" width="100%" height="300px"></iframe>
+
+<h1>11. ToDo list with filter Angular</h1>
+
+<div class="container11">
+  <input type="text" [(ngModel)]="todoText" placeholder="New todo" />
+  <button (click)="addTodo()">Add</button>
+  <br />
+  <input type="text" [(ngModel)]="todoFilter" placeholder="Filter" />
+  <ul>
+    <li *ngFor="let t of filteredTodos()">{{ t.text }}</li>
+  </ul>
+</div>
+
+<h1>ToDo list with filter Vanilla JS</h1>
+
+<iframe src="/content/kata_js/11_todoFilter.html" width="100%" height="300px"></iframe>
+
+<h1>12. Contact form with validation Angular</h1>
+
+<div class="container12">
+  <input type="text" [(ngModel)]="contactName" placeholder="Name" />
+  <input type="email" [(ngModel)]="contactEmail" placeholder="Email" />
+  <textarea [(ngModel)]="contactMessage" placeholder="Message"></textarea>
+  <button (click)="submitContact()">Send</button>
+  <p *ngIf="contactSubmitted">Thank you!</p>
+</div>
+
+<h1>Contact form with validation Vanilla JS</h1>
+
+<iframe src="/content/kata_js/12_contactForm.html" width="100%" height="300px"></iframe>
+
+<h1>13. Comment section with date Angular</h1>
+
+<div class="container13">
+  <input type="text" [(ngModel)]="commentText" placeholder="Add comment" />
+  <button (click)="addComment()">Add</button>
+  <ul>
+    <li *ngFor="let c of comments">{{ c.text }} - {{ c.date }}</li>
+  </ul>
+</div>
+
+<h1>Comment section with date Vanilla JS</h1>
+
+<iframe src="/content/kata_js/13_commentSection.html" width="100%" height="300px"></iframe>
+
+<h1>14. Number guessing game Angular</h1>
+<div class="container14">
+  <button (click)="guessNumber()">Guess Number</button>
+  <p>{{ guessMessage }}</p>
+</div>
+<h1>Number guessing game Vanilla JS</h1>
+<iframe src="/content/kata_js/14_numberGuess.html" width="100%" height="300px"></iframe>
+
+<h1>15. Book list with search Angular</h1>
+<div class="container15">
+  <input type="text" [(ngModel)]="bookTerm" placeholder="Search" />
+  <ul>
+    <li *ngFor="let b of filteredBooks()">{{ b }}</li>
+  </ul>
+</div>
+<h1>Book list with search Vanilla JS</h1>
+<iframe src="/content/kata_js/15_bookSearch.html" width="100%" height="300px"></iframe>
+
+<h1>16. Product filtering by category Angular</h1>
+<div class="container16">
+  <select [(ngModel)]="productCategory">
+    <option value="all">All</option>
+    <option value="fruit">Fruit</option>
+    <option value="veg">Veg</option>
+  </select>
+  <ul>
+    <li *ngFor="let p of filteredProducts()">{{ p.name }}</li>
+  </ul>
+</div>
+<h1>Product filtering by category Vanilla JS</h1>
+<iframe src="/content/kata_js/16_productFilter.html" width="100%" height="300px"></iframe>
+
+<h1>17. Auto-refresh data every 10s Angular</h1>
+<div class="container17">
+  <p>{{ autoValue }}</p>
+</div>
+<h1>Auto-refresh data every 10s Vanilla JS</h1>
+<iframe src="/content/kata_js/17_autoRefresh.html" width="100%" height="300px"></iframe>
+
+<h1>18. Display product data from array Angular</h1>
+<div class="container18">
+  <ul>
+    <li *ngFor="let p of products">{{ p.name }} - ${{ p.price }}</li>
+  </ul>
+</div>
+<h1>Display product data from array Vanilla JS</h1>
+<iframe src="/content/kata_js/18_displayProducts.html" width="100%" height="300px"></iframe>
+
+<h1>19. Sort products by price Angular</h1>
+<div class="container19">
+  <button (click)="sortAsc = !sortAsc">Toggle Sort</button>
+  <ul>
+    <li *ngFor="let p of sortedByPrice()">{{ p.name }} - ${{ p.price }}</li>
+  </ul>
+</div>
+<h1>Sort products by price Vanilla JS</h1>
+<iframe src="/content/kata_js/19_sortByPrice.html" width="100%" height="300px"></iframe>
+
+<h1>20. Traffic light simulation Angular</h1>
+<div class="container20">
+  <div class="light" [class.active]="currentLight === 'red'" style="background: red"></div>
+  <div class="light" [class.active]="currentLight === 'yellow'" style="background: yellow"></div>
+  <div class="light" [class.active]="currentLight === 'green'" style="background: green"></div>
+</div>
+<h1>Traffic light simulation Vanilla JS</h1>
+<iframe src="/content/kata_js/20_trafficLight.html" width="100%" height="300px"></iframe>
+
+<h1>21. Countdown timer Angular</h1>
+<div class="container21">
+  <input type="number" [(ngModel)]="countdownStart" />
+  <button (click)="startCountdown()">Start</button>
+  <p>{{ countdownValue }}</p>
+</div>
+<h1>Countdown timer Vanilla JS</h1>
+<iframe src="/content/kata_js/21_countdown.html" width="100%" height="300px"></iframe>
+
+<h1>22. Stopwatch with Start/Stop Angular</h1>
+<div class="container22">
+  <button (click)="toggleStopwatch()">{{ stopwatchRunning ? 'Stop' : 'Start' }}</button>
+  <p>{{ stopwatchDisplay }}</p>
+</div>
+<h1>Stopwatch with Start/Stop Vanilla JS</h1>
+<iframe src="/content/kata_js/22_stopwatch.html" width="100%" height="300px"></iframe>
+
+<h1>23. setTimeout + await delay Angular</h1>
+<div class="container23">
+  <button (click)="runDelay()">Run</button>
+  <p>{{ delayMessage }}</p>
+</div>
+<h1>setTimeout + await delay Vanilla JS</h1>
+<iframe src="/content/kata_js/23_delay.html" width="100%" height="300px"></iframe>
+
+<h1>24. Load data from API Angular</h1>
+<div class="container24">
+  <button (click)="fetchData()">Load</button>
+  <pre>{{ apiData | json }}</pre>
+</div>
+<h1>Load data from API Vanilla JS</h1>
+<iframe src="/content/kata_js/24_loadApi.html" width="100%" height="300px"></iframe>
+
+<h1>25. Loading spinner Angular</h1>
+<div class="container25">
+  <button (click)="startLoading()">Start</button>
+  <div *ngIf="loading" class="spinner"></div>
+</div>
+<h1>Loading spinner Vanilla JS</h1>
+<iframe src="/content/kata_js/25_loadingSpinner.html" width="100%" height="300px"></iframe>
+
+<h1>26. Async quiz Angular</h1>
+<div class="container26">
+  <button (click)="loadAsyncQuiz()">Load Quiz</button>
+  <p>{{ asyncQuizQuestion }}</p>
+</div>
+<h1>Async quiz Vanilla JS</h1>
+<iframe src="/content/kata_js/26_asyncQuiz.html" width="100%" height="300px"></iframe>
+
+<h1>27. Quiz with 3 questions Angular</h1>
+<div class="container27" *ngIf="quizIndex < quizQuestions.length; else quizDone">
+  <p>{{ quizQuestions[quizIndex].q }}</p>
+  <input [(ngModel)]="quizAnswer" />
+  <button (click)="submitQuizAnswer()">Next</button>
+</div>
+<ng-template #quizDone>
+  <p>Score: {{ quizScore }}</p>
+</ng-template>
+<h1>Quiz with 3 questions Vanilla JS</h1>
+<iframe src="/content/kata_js/27_quiz3.html" width="100%" height="300px"></iframe>
+
+<h1>28. Shuffle list Angular</h1>
+<div class="container28">
+  <button (click)="shuffleList()">Shuffle</button>
+  <ul>
+    <li *ngFor="let i of shuffleItems">{{ i }}</li>
+  </ul>
+</div>
+<h1>Shuffle list Vanilla JS</h1>
+<iframe src="/content/kata_js/28_shuffleList.html" width="100%" height="300px"></iframe>
+
+<h1>29. Hover effect Angular</h1>
+<div class="container29">
+  <div class="itemHover" *ngFor="let item of itemsHover; let i = index" [class.is-active]="isActive(i)" (click)="toggleActive(i)">
+    {{ item }}
+  </div>
+</div>
+<h1>Hover effect Vanilla JS</h1>
+<iframe src="/content/kata_js/29_hoverEffect.html" width="100%" height="300px"></iframe>
+
+<h1>30. Range slider Angular</h1>
+<div class="container30">
+  <input type="range" [(ngModel)]="rangeValue" />
+  <p>{{ rangeValue }}</p>
+</div>
+<h1>Range slider Vanilla JS</h1>
+<iframe src="/content/kata_js/30_rangeSlider.html" width="100%" height="300px"></iframe>
+
+<h1>31. Tip calculator Angular</h1>
+<div class="container31">
+  <input type="number" [(ngModel)]="bill" placeholder="Bill" />
+  <input type="number" [(ngModel)]="tipPercent" placeholder="Tip %" />
+  <p>Total: {{ tipTotal }}</p>
+</div>
+<h1>Tip calculator Vanilla JS</h1>
+<iframe src="/content/kata_js/31_tipCalculator.html" width="100%" height="300px"></iframe>
+
+<h1>32. Cart with product sum Angular</h1>
+<div class="container32">
+  <div *ngFor="let p of cartProducts">
+    {{ p.name }} ${{ p.price }}
+    <input type="number" [(ngModel)]="p.qty" />
+  </div>
+  <p>Total: {{ cartSum }}</p>
+</div>
+<h1>Cart with product sum Vanilla JS</h1>
+<iframe src="/content/kata_js/32_cartSum.html" width="100%" height="300px"></iframe>
+<!-- 
+<h1>33. Live search with debounce Angular</h1>
+<div class="container33">
+  <input (input)="onInput($event.target.value)" placeholder="Search" />
+  <ul>
+    <li *ngFor="let item of results">{{ item }}</li>
+  </ul>
+</div> -->
+<h1>Live search Vanilla JS</h1>
+<iframe src="/content/kata_js/33_liveSearch.html" width="100%" height="300px"></iframe>
+
+<h1>34. VAT calculator Angular</h1>
+<div class="container34">
+  <input type="number" [(ngModel)]="vatNet" placeholder="Net" />
+  <p>Gross: {{ vatGross }}</p>
+</div>
+<h1>VAT calculator Vanilla JS</h1>
+<iframe src="/content/kata_js/34_vatCalculator.html" width="100%" height="300px"></iframe>
+
+<h1>35. Sorting + pagination Angular</h1>
+<div class="container35">
+  <button (click)="sort()">Sort</button>
+  <button (click)="prev()" [disabled]="page === 0">Prev</button>
+  <button (click)="next()" [disabled]="page + 1 >= totalPages">Next</button>
+
+  <table class="tbl">
+    <tbody>
+      <tr *ngFor="let i of pageItems; trackBy: trackByIndex">
+        <td>{{ i }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="meta">
+    Page: {{ page + 1 }} / {{ totalPages }}
+    <span> • Order: {{ asc ? 'ASC' : 'DESC' }}</span>
+  </div>
+</div>
+
+<h1>35. Sorting + pagination Vanilla JS</h1>
+<iframe src="/content/kata_js/35_sortPaginate.html" width="100%" height="300px"></iframe>
+
+<h1>36. Data display with Angular pipe</h1>
+<div class="container36">
+  <ul>
+    <li *ngFor="let n of ['alice', 'bob', 'carol']">{{ n | uppercase }}</li>
+  </ul>
+</div>
+<h1>Data display Vanilla JS</h1>
+<iframe src="/content/kata_js/36_pipeDisplay.html" width="100%" height="300px"></iframe>
+
+<h1>37. Filter + sort products Angular</h1>
+<div class="container37">
+  <input type="text" [(ngModel)]="filter37" placeholder="Filter" aria-label="Filter products37 by name" />
+
+  <button (click)="toggleSort37()">Toggle Sort</button>
+
+  <ul class="list">
+    <li *ngFor="let p37 of filteredSorted37; trackBy: trackByName37">{{ p37.name }} ${{ p37.price }}</li>
+  </ul>
+</div>
+<h1>Filter + sort products Vanilla JS</h1>
+<iframe src="/content/kata_js/37_filterSortProducts.html" width="100%" height="300px"></iframe>
+
+<h1>38. Simulate HTTP loading delay Angular</h1>
+<div class="container38">
+  <button (click)="simulateHttp()">Run</button>
+  <p>{{ delayResult }}</p>
+</div>
+<h1>Simulate HTTP loading delay Vanilla JS</h1>
+<iframe src="/content/kata_js/38_httpDelay.html" width="100%" height="300px"></iframe>
+
+<h1>39. Local mock API Angular</h1>
+<div class="container39">
+  <button (click)="loadMock()">Load</button>
+  <pre>{{ mockData | json }}</pre>
+</div>
+<h1>Local mock API Vanilla JS</h1>
+<iframe src="/content/kata_js/39_localMockAPI.html" width="100%" height="300px"></iframe>
+
+<h1>40. Angular table with pagination Angular</h1>
+<div class="container40">
+  <button (click)="prev40()" [disabled]="page40 === 0">Prev</button>
+  <button (click)="next40()" [disabled]="page40 + 1 >= totalPages">Next</button>
+
+  <table class="tbl40">
+    <tbody>
+      <tr *ngFor="let r of slice40; trackBy: trackByName40">
+        <td>{{ r.n }}</td>
+        <td>{{ r.p }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="meta">Page: {{ page + 1 }} / {{ totalPages }}</div>
+</div>
+
+<h1>Angular table with pagination Vanilla JS</h1>
+<iframe src="/content/kata_js/40_tablePagination.html" width="100%" height="300px"></iframe>
+
+<h1>41. Dashboard with 3 routed sections Angular</h1>
+<div class="container41">
+  <div *ngFor="let s of dashboardSections">Section {{ s }}</div>
+</div>
+<h1>Dashboard Vanilla JS</h1>
+<iframe src="/content/kata_js/41_dashboard.html" width="100%" height="300px"></iframe>
+
+<h1>42. Mock mailbox Angular</h1>
+<div class="container42">
+  <ul>
+    <li *ngFor="let m of mails" (click)="selectMail(m)">{{ m.subject }}</li>
+  </ul>
+  <p>{{ selectedMail }}</p>
+</div>
+<h1>Mock mailbox Vanilla JS</h1>
+<iframe src="/content/kata_js/42_mockMailbox.html" width="100%" height="300px"></iframe>
+
+<h1>43. Promo code generator Angular</h1>
+<div class="container43">
+  <input [(ngModel)]="promoEmail" placeholder="Email" />
+  <button (click)="generateCode()">Generate</button>
+  <p>{{ promoCode }}</p>
+</div>
+<h1>Promo code generator Vanilla JS</h1>
+<iframe src="/content/kata_js/43_promoCode.html" width="100%" height="300px"></iframe>
+
+<h1>44. Product search with cache Angular</h1>
+<div class="container44">
+  <input #q placeholder="Search" (input)="onInput44(q.value)" />
+  <ul>
+    <li *ngFor="let p of results44">{{ p }}</li>
+  </ul>
+</div>
+<h1>Product search with cache Vanilla JS</h1>
+<iframe src="/content/kata_js/44_productCache.html" width="100%" height="300px"></iframe>
+
+<h1>45. Component unit testing Angular</h1>
+<div class="container45">Write tests for this component.</div>
+<h1>Component unit testing Vanilla JS</h1>
+<iframe src="/content/kata_js/45_unitTesting.html" width="100%" height="300px"></iframe>
+
+<h1>46. Multi-column sorting Angular</h1>
+<div class="container">
+  <table class="tbl">
+    <thead>
+      <tr>
+        <th (click)="sortBy('name')" [attr.aria-sort]="ariaSort.name" role="columnheader">
+          Name
+          <span class="arrow">
+            {{ ariaSort.name === 'ascending' ? '▲' : ariaSort.name === 'descending' ? '▼' : '' }}
+          </span>
+        </th>
+
+        <th (click)="sortBy('price')" [attr.aria-sort]="ariaSort.price" role="columnheader">
+          Price
+          <span class="arrow">
+            {{ ariaSort.price === 'ascending' ? '▲' : ariaSort.price === 'descending' ? '▼' : '' }}
+          </span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let r of data46; trackBy: trackByName46">
+        <td>{{ r.name }}</td>
+        <td>{{ r.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h1>Multi-column sorting Vanilla JS</h1>
+<iframe src="/content/kata_js/46_multiSort.html" width="100%" height="300px"></iframe>
+
+<h1>47. Cart with add/remove Angular</h1>
+<div class="container47">
+  <button (click)="add47('Apple', 5)">Add Apple</button>
+  <button (click)="add47('Banana', 3)">Add Banana</button>
+
+  <ul class="list">
+    <li *ngFor="let c of cart; let i = index; trackBy: trackByIndex47">
+      <span>{{ c.name }} {{ c.price | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
+      <button class="remove" (click)="removeAt47(i)">Remove</button>
+    </li>
+  </ul>
+
+  <p id="total47">Total: {{ total | currency: 'USD' : 'symbol' : '1.0-0' }}</p>
+</div>
+<h1>Cart with add/remove Vanilla JS</h1>
+<iframe src="/content/kata_js/47_cartService.html" width="100%" height="300px"></iframe>
+
+<h1>48. Simulated API pagination Angular</h1>
+<div class="container48">
+  <button (click)="apiPage = apiPage - 1; loadApiPage()" [disabled]="apiPage === 1">Prev</button>
+  <button (click)="apiPage = apiPage + 1; loadApiPage()">Next</button>
+  <ul>
+    <li *ngFor="let i of apiItems">{{ i.title }}</li>
+  </ul>
+</div>
+<h1>Simulated API pagination Vanilla JS</h1>
+<iframe src="/content/kata_js/48_apiPagination.html" width="100%" height="300px"></iframe>
+
+<h1>49. Full quiz app with results Angular</h1>
+<div class="container49" *ngIf="fullIndex < fullQuiz.length; else quizOver">
+  <p>{{ fullQuiz[fullIndex].q }}</p>
+  <input [(ngModel)]="fullAnswer" />
+  <button (click)="submitFull()">Next</button>
+</div>
+<ng-template #quizOver>
+  <p>Score: {{ fullScore }}/{{ fullQuiz.length }}</p>
+</ng-template>
+<h1>Full quiz app Vanilla JS</h1>
+<iframe src="/content/kata_js/49_fullQuiz.html" width="100%" height="300px"></iframe>
+
+<h1>50. Admin panel with modal Angular</h1>
+<div class="container50">
+  <button (click)="open50()">Open Modal</button>
+
+  <div *ngIf="isOpen50" class="modal50" role="dialog" aria-modal="true" aria-label="Admin Action Modal">
+    Admin Action
+    <button (click)="close50()">Close</button>
+  </div>
+</div>
+<iframe src="/content/kata_js/50_adminPanel.html" width="100%" height="300px"></iframe>
