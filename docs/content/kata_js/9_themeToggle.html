@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9. Light/Dark theme toggle (Vanilla)</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #eef2f7;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      .container9 {
+        max-width: 520px;
+        margin: 20px auto;
+        padding: 2rem;
+        background: #f5f5f5;
+        color: #222;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+
+      .container9.dark {
+        background: #333;
+        color: #fff;
+      }
+
+      .container9 button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        margin: 5px 0 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .container9 button:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container9" id="container9">
+      <button id="toggleBtn">Toggle Theme</button>
+      <p id="status">Theme: Light</p>
+    </div>
+
+    <script>
+      // Stan jak w Angularze
+      let isDark = false;
+
+      const container = document.getElementById('container9');
+      const status = document.getElementById('status');
+      const btn = document.getElementById('toggleBtn');
+
+      function render() {
+        container.classList.toggle('dark', isDark);
+        status.textContent = `Theme: ${isDark ? 'Dark' : 'Light'}`;
+      }
+
+      function toggleTheme() {
+        isDark = !isDark;
+        render();
+      }
+
+      btn.addEventListener('click', toggleTheme);
+
+      // pierwsze wyrenderowanie (opcjonalne)
+      render();
+    </script>
+  </body>
+</html>

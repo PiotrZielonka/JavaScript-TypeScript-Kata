@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hover Effect</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: #eef2f7;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .item {
+        padding: 12px 14px;
+        margin: 8px 0;
+        background: #eee;
+        border-radius: 6px;
+        transition:
+          background 0.25s,
+          color 0.25s,
+          transform 0.15s;
+        cursor: pointer;
+      }
+      /* Desktop hover */
+      .item:hover {
+        background: #4e8ef7;
+        color: #fff;
+        transform: translateY(-1px);
+      }
+      /* Touch/click fallback toggled by JS */
+      .item.is-active {
+        background: #4e8ef7;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <script>
+      // Touch/click fallback: tap toggles the visual state
+      document.querySelectorAll('.item').forEach(el => {
+        el.addEventListener('click', () => {
+          el.classList.toggle('is-active');
+        });
+
+        // Optional: brief visual on touchstart
+        el.addEventListener(
+          'touchstart',
+          () => {
+            el.classList.add('is-active');
+          },
+          { passive: true },
+        );
+        el.addEventListener('touchend', () => {
+          el.classList.remove('is-active');
+        });
+      });
+    </script>
+  </body>
+</html>

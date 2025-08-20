@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: #eef2f7;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        margin: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .container {
+        text-align: center;
+        margin-top: 20px;
+        font-family: Arial;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img id="photo" src="https://picsum.photos/200/300?grayscale" alt="photo" />
+      <br />
+      <button id="next">Next photo</button>
+    </div>
+    <script>
+      const images = ['https://picsum.photos/id/25/150/150', 'https://picsum.photos/id/26/150/150', 'https://picsum.photos/id/27/150/150'];
+      let idx = 0;
+      document.getElementById('next').addEventListener('click', () => {
+        idx = (idx + 1) % images.length;
+        document.getElementById('photo').src = images[idx];
+      });
+    </script>
+  </body>
+</html>

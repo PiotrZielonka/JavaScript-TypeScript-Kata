@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Filter Sort Products</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: #eef2f7;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        margin: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input id="f" placeholder="Filter" />
+      <button id="t">Toggle Sort</button>
+      <ul id="list"></ul>
+    </div>
+    <script>
+      const products = [
+        { name: 'Apple', price: 5 },
+        { name: 'Banana', price: 3 },
+        { name: 'Carrot', price: 7 },
+      ];
+      let asc = true;
+      const list = document.getElementById('list');
+      const f = document.getElementById('f');
+      function render() {
+        list.innerHTML = products
+          .filter(p => p.name.toLowerCase().includes(f.value.toLowerCase()))
+          .sort((a, b) => (asc ? a.price - b.price : b.price - a.price))
+          .map(p => `<li>${p.name} $${p.price}</li>`)
+          .join('');
+      }
+      f.addEventListener('input', render);
+      document.getElementById('t').addEventListener('click', () => {
+        asc = !asc;
+        render();
+      });
+      render();
+    </script>
+  </body>
+</html>

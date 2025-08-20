@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Full Quiz</title>
+    <style>
+      body { font-family: "Segoe UI", Tahoma, sans-serif; background:#eef2f7; margin:0; padding:20px; }
+      .container { max-width:500px; margin:20px auto; padding:20px; background:#fff; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; }
+      button { background:#007bff; color:#fff; border:none; padding:10px 16px; margin:5px; border-radius:4px; cursor:pointer; transition:background 0.3s; }
+      button:hover { background:#0056b3; }
+      input, textarea, select { width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:4px;
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="q"></div>
+      <input id="a" />
+      <button id="next">Next</button>
+      <p id="res"></p>
+    </div>
+    <script>
+      const qz = [
+        { q: 'Capital of France?', a: 'paris' },
+        { q: '2*3', a: '6' },
+      ];
+      let i = 0,
+        score = 0;
+      const q = document.getElementById('q');
+      const a = document.getElementById('a');
+      const r = document.getElementById('res');
+      function show() {
+        q.textContent = qz[i].q;
+        a.value = '';
+      }
+      document.getElementById('next').addEventListener('click', () => {
+        if (a.value.toLowerCase() === qz[i].a) score++;
+        i++;
+        if (i < qz.length) {
+          show();
+        } else {
+          r.textContent = 'Score: ' + score + '/' + qz.length;
+        }
+      });
+      show();
+    </script>
+  </body>
+</html>

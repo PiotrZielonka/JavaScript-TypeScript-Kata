@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cart Service</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: #eef2f7;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        margin: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        background: #f6f7f9;
+        border: 1px solid #e9edf2;
+        border-radius: 6px;
+        margin: 6px 0;
+      }
+      .remove {
+        background: #dc3545;
+      }
+      .remove:hover {
+        background: #b02a37;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button data-name="Apple" data-price="5">Add Apple</button>
+      <button data-name="Banana" data-price="3">Add Banana</button>
+      <ul id="cart"></ul>
+      <p id="total"></p>
+    </div>
+
+    <script>
+      const cart = [];
+      const list = document.getElementById('cart');
+      const total = document.getElementById('total');
+
+      // Dodawanie do koszyka
+      document.querySelectorAll('button[data-name]').forEach(b =>
+        b.addEventListener('click', () => {
+          cart.push({ name: b.dataset.name, price: Number(b.dataset.price) });
+          render();
+        }),
+      );
+
+      // Usuwanie z koszyka (delegacja zdarzeń)
+      list.addEventListener('click', e => {
+        const btn = e.target.closest('button.remove');
+        if (!btn) return;
+        const idx = Number(btn.dataset.i);
+        if (!Number.isNaN(idx)) {
+          cart.splice(idx, 1);
+          render();
+        }
+      });
+
+      function render() {
+        list.innerHTML = cart
+          .map(
+            (c, i) =>
+              `<li>
+               <span>${c.name} $${c.price}</span>
+               <button class="remove" data-i="${i}">Remove</button>
+             </li>`,
+          )
+          .join('');
+
+        const sum = cart.reduce((s, c) => s + Number(c.price || 0), 0);
+        total.textContent = 'Total: $' + sum;
+      }
+
+      // pokaż Total od razu (0)
+      render();
+    </script>
+  </body>
+</html>

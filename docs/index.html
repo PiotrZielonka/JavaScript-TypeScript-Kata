@@ -1,0 +1,503 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr" data-beasties-container>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JavascriptTypescriptKata</title>
+    <meta name="description" content="Description for JavascriptTypescriptKata" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <base href="/JavaScript-TypeScript-Kata/" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.webapp" />
+    <style>
+      @keyframes lds-pacman-1 {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        50% {
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+        100% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+      }
+      @-webkit-keyframes lds-pacman-1 {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        50% {
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+        100% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+      }
+      @keyframes lds-pacman-2 {
+        0% {
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+        50% {
+          -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+        }
+        100% {
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+      @-webkit-keyframes lds-pacman-2 {
+        0% {
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+        50% {
+          -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+        }
+        100% {
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+      @keyframes lds-pacman-3 {
+        0% {
+          -webkit-transform: translate(190px, 0);
+          transform: translate(190px, 0);
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: translate(70px, 0);
+          transform: translate(70px, 0);
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes lds-pacman-3 {
+        0% {
+          -webkit-transform: translate(190px, 0);
+          transform: translate(190px, 0);
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: translate(70px, 0);
+          transform: translate(70px, 0);
+          opacity: 1;
+        }
+      }
+      .app-loading {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 10em;
+      }
+      .app-loading p {
+        display: block;
+        font-size: 1.17em;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        font-weight: normal;
+      }
+      .app-loading .lds-pacman {
+        position: relative;
+        margin: auto;
+        width: 200px !important;
+        height: 200px !important;
+        -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+        transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+      }
+      .app-loading .lds-pacman > div:nth-child(2) div {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 120px;
+        height: 60px;
+        border-radius: 120px 120px 0 0;
+        background: #bbcedd;
+        -webkit-animation: lds-pacman-1 1s linear infinite;
+        animation: lds-pacman-1 1s linear infinite;
+        -webkit-transform-origin: 60px 60px;
+        transform-origin: 60px 60px;
+      }
+      .app-loading .lds-pacman > div:nth-child(2) div:nth-child(2) {
+        -webkit-animation: lds-pacman-2 1s linear infinite;
+        animation: lds-pacman-2 1s linear infinite;
+      }
+      .app-loading .lds-pacman > div:nth-child(1) div {
+        position: absolute;
+        top: 97px;
+        left: -8px;
+        width: 24px;
+        height: 10px;
+        background-image: url('/content/images/logo-jhipster.png');
+        background-size: contain;
+        -webkit-animation: lds-pacman-3 1s linear infinite;
+        animation: lds-pacman-3 1.5s linear infinite;
+      }
+      .app-loading .lds-pacman > div:nth-child(1) div:nth-child(1) {
+        -webkit-animation-delay: -0.67s;
+        animation-delay: -1s;
+      }
+      .app-loading .lds-pacman > div:nth-child(1) div:nth-child(2) {
+        -webkit-animation-delay: -0.33s;
+        animation-delay: -0.5s;
+      }
+      .app-loading .lds-pacman > div:nth-child(1) div:nth-child(3) {
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+      }
+    </style>
+    <link rel="stylesheet" href="content/css/loading.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="content/css/loading.css" /></noscript>
+    <!-- jhipster-needle-add-resources-to-root - JHipster will add new resources here -->
+    <style>
+      :root {
+        --bs-blue: #007bff;
+        --bs-indigo: #6610f2;
+        --bs-purple: #593196;
+        --bs-pink: #e83e8c;
+        --bs-red: #fc3939;
+        --bs-orange: #fd7e14;
+        --bs-yellow: #efa31d;
+        --bs-green: #13b955;
+        --bs-teal: #20c997;
+        --bs-cyan: #009cdc;
+        --bs-black: #000;
+        --bs-white: #fff;
+        --bs-gray: #868e96;
+        --bs-gray-dark: #343a40;
+        --bs-gray-100: #fafafa;
+        --bs-gray-200: #f9f8fc;
+        --bs-gray-300: #ededed;
+        --bs-gray-400: #cbc8d0;
+        --bs-gray-500: #adb5bd;
+        --bs-gray-600: #868e96;
+        --bs-gray-700: #444;
+        --bs-gray-800: #343a40;
+        --bs-gray-900: #17141f;
+        --bs-primary: #593196;
+        --bs-secondary: #a991d4;
+        --bs-success: #13b955;
+        --bs-info: #009cdc;
+        --bs-warning: #efa31d;
+        --bs-danger: #fc3939;
+        --bs-light: #f9f8fc;
+        --bs-dark: #17141f;
+        --bs-primary-rgb: 89, 49, 150;
+        --bs-secondary-rgb: 169, 145, 212;
+        --bs-success-rgb: 19, 185, 85;
+        --bs-info-rgb: 0, 156, 220;
+        --bs-warning-rgb: 239, 163, 29;
+        --bs-danger-rgb: 252, 57, 57;
+        --bs-light-rgb: 249, 248, 252;
+        --bs-dark-rgb: 23, 20, 31;
+        --bs-primary-text-emphasis: rgb(35.6, 19.6, 60);
+        --bs-secondary-text-emphasis: rgb(67.6, 58, 84.8);
+        --bs-success-text-emphasis: rgb(7.6, 74, 34);
+        --bs-info-text-emphasis: rgb(0, 62.4, 88);
+        --bs-warning-text-emphasis: rgb(95.6, 65.2, 11.6);
+        --bs-danger-text-emphasis: rgb(100.8, 22.8, 22.8);
+        --bs-light-text-emphasis: #444;
+        --bs-dark-text-emphasis: #444;
+        --bs-primary-bg-subtle: rgb(221.8, 213.8, 234);
+        --bs-secondary-bg-subtle: rgb(237.8, 233, 246.4);
+        --bs-success-bg-subtle: rgb(207.8, 241, 221);
+        --bs-info-bg-subtle: rgb(204, 235.2, 248);
+        --bs-warning-bg-subtle: rgb(251.8, 236.6, 209.8);
+        --bs-danger-bg-subtle: rgb(254.4, 215.4, 215.4);
+        --bs-light-bg-subtle: rgb(252.5, 252.5, 252.5);
+        --bs-dark-bg-subtle: #cbc8d0;
+        --bs-primary-border-subtle: rgb(188.6, 172.6, 213);
+        --bs-secondary-border-subtle: rgb(220.6, 211, 237.8);
+        --bs-success-border-subtle: rgb(160.6, 227, 187);
+        --bs-info-border-subtle: rgb(153, 215.4, 241);
+        --bs-warning-border-subtle: rgb(248.6, 218.2, 164.6);
+        --bs-danger-border-subtle: rgb(253.8, 175.8, 175.8);
+        --bs-light-border-subtle: #f9f8fc;
+        --bs-dark-border-subtle: #adb5bd;
+        --bs-white-rgb: 255, 255, 255;
+        --bs-black-rgb: 0, 0, 0;
+        --bs-font-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial,
+          sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+        --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+        --bs-body-font-family: var(--bs-font-sans-serif);
+        --bs-body-font-size: 1rem;
+        --bs-body-font-weight: 400;
+        --bs-body-line-height: 1.5;
+        --bs-body-color: #444;
+        --bs-body-color-rgb: 68, 68, 68;
+        --bs-body-bg: #fff;
+        --bs-body-bg-rgb: 255, 255, 255;
+        --bs-emphasis-color: #000;
+        --bs-emphasis-color-rgb: 0, 0, 0;
+        --bs-secondary-color: rgba(68, 68, 68, 0.75);
+        --bs-secondary-color-rgb: 68, 68, 68;
+        --bs-secondary-bg: #f9f8fc;
+        --bs-secondary-bg-rgb: 249, 248, 252;
+        --bs-tertiary-color: rgba(68, 68, 68, 0.5);
+        --bs-tertiary-color-rgb: 68, 68, 68;
+        --bs-tertiary-bg: #fafafa;
+        --bs-tertiary-bg-rgb: 250, 250, 250;
+        --bs-heading-color: inherit;
+        --bs-link-color: #593196;
+        --bs-link-color-rgb: 89, 49, 150;
+        --bs-link-decoration: underline;
+        --bs-link-hover-color: #593196;
+        --bs-link-hover-color-rgb: 89, 49, 150;
+        --bs-code-color: #e83e8c;
+        --bs-highlight-color: #444;
+        --bs-highlight-bg: rgb(251.8, 236.6, 209.8);
+        --bs-border-width: 1px;
+        --bs-border-style: solid;
+        --bs-border-color: #ededed;
+        --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+        --bs-border-radius: 0.375rem;
+        --bs-border-radius-sm: 0.25rem;
+        --bs-border-radius-lg: 0.5rem;
+        --bs-border-radius-xl: 1rem;
+        --bs-border-radius-xxl: 2rem;
+        --bs-border-radius-2xl: var(--bs-border-radius-xxl);
+        --bs-border-radius-pill: 50rem;
+        --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+        --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+        --bs-focus-ring-width: 0.25rem;
+        --bs-focus-ring-opacity: 0.25;
+        --bs-focus-ring-color: rgba(89, 49, 150, 0.25);
+        --bs-form-valid-color: #13b955;
+        --bs-form-valid-border-color: #13b955;
+        --bs-form-invalid-color: #fc3939;
+        --bs-form-invalid-border-color: #fc3939;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        :root {
+          scroll-behavior: smooth;
+        }
+      }
+      body {
+        margin: 0;
+        font-family: var(--bs-body-font-family);
+        font-size: var(--bs-body-font-size);
+        font-weight: var(--bs-body-font-weight);
+        line-height: var(--bs-body-line-height);
+        color: var(--bs-body-color);
+        text-align: var(--bs-body-text-align);
+        background-color: var(--bs-body-bg);
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+      h3,
+      h2,
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--bs-heading-color);
+      }
+      h1 {
+        font-size: calc(1.375rem + 1.5vw);
+      }
+      @media (min-width: 1200px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+      h2 {
+        font-size: calc(1.325rem + 0.9vw);
+      }
+      @media (min-width: 1200px) {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+      h3 {
+        font-size: calc(1.3rem + 0.6vw);
+      }
+      @media (min-width: 1200px) {
+        h3 {
+          font-size: 1.75rem;
+        }
+      }
+      p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      ol {
+        padding-left: 2rem;
+      }
+      ol {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      a {
+        color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+        text-decoration: underline;
+      }
+      a:hover {
+        --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+      }
+      a:not([href]):not([class]),
+      a:not([href]):not([class]):hover {
+        color: inherit;
+        text-decoration: none;
+      }
+      code {
+        font-family: var(--bs-font-monospace);
+        font-size: 1em;
+      }
+      code {
+        font-size: 0.875em;
+        color: var(--bs-code-color);
+        word-wrap: break-word;
+      }
+      :root {
+        --bs-breakpoint-xs: 0;
+        --bs-breakpoint-sm: 576px;
+        --bs-breakpoint-md: 768px;
+        --bs-breakpoint-lg: 992px;
+        --bs-breakpoint-xl: 1200px;
+        --bs-breakpoint-xxl: 1400px;
+      }
+      body,
+      h1,
+      h2,
+      h3 {
+        font-weight: 300;
+      }
+      a:hover {
+        cursor: pointer;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.ece192d22fbd3241.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="styles.ece192d22fbd3241.css" /></noscript>
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+    <jhi-app>
+      <div class="app-loading">
+        <div class="lds-pacman">
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="app-loading">
+        <div id="jhipster-error" style="display: none">
+          <!-- This content is for troubleshooting purpose and will be removed when app renders -->
+          <h1>An error has occurred :-(</h1>
+          <h2>Usual error causes</h2>
+          <ol>
+            <li>
+              You started the application from an IDE and you didn't run <code style="color: red">npm start</code> or
+              <code style="color: red">npm run webapp:build</code>.
+            </li>
+            <li>
+              You had a network error while running <code style="color: red">npm install</code>. If you are behind a corporate proxy, it is
+              likely that this error was caused by your proxy. Have a look at the JHipster error logs, you will probably have the cause of
+              the error.
+            </li>
+            <li>
+              You installed a Node.js version that doesn't work with JHipster: please use an LTS (long-term support) version, as it's the
+              only version we support.
+            </li>
+          </ol>
+          <h2>Building the client side code again</h2>
+          <p>If you want to go fast, run <code style="color: red">./mvnw</code> to build and run everything.</p>
+          <p>If you want to have more control, so you can debug your issue more easily, you should follow the following steps:</p>
+          <ol>
+            <li>Install npm dependencies with the command <code style="color: red">npm install</code></li>
+            <li>
+              Build the client with the command <code style="color: red">npm run webapp:build</code> or
+              <code style="color: red">npm start</code>
+            </li>
+            <li>Start the server with <code style="color: red">./mvnw</code> or using your IDE</li>
+          </ol>
+
+          <h2>Getting more help</h2>
+
+          <h3>If you have a question on how to use JHipster</h3>
+          <p>
+            Go to Stack Overflow with the
+            <a href="http://stackoverflow.com/tags/jhipster" target="_blank" rel="noopener noreferrer">"jhipster"</a> tag.
+          </p>
+
+          <h3>If you have a bug or a feature request</h3>
+          <p>
+            First read our
+            <a href="https://github.com/jhipster/generator-jhipster/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer"
+              >contributing guidelines</a
+            >.
+          </p>
+          <p>
+            Then, fill a ticket on our
+            <a href="https://github.com/jhipster/generator-jhipster/issues/new/choose" target="_blank" rel="noopener noreferrer"
+              >bug tracker</a
+            >, we'll be happy to resolve your issue!
+          </p>
+
+          <h3>If you want to chat with contributors and other users</h3>
+          <p>
+            Join our chat room on
+            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">Gitter.im</a>. Please note
+            that this is a public chat room, and that we expect you to respect other people and write in a correct English language!
+          </p>
+          <!-- end of troubleshooting content -->
+        </div>
+      </div>
+    </jhi-app>
+    <noscript>
+      <h1>You must enable JavaScript to view this page.</h1>
+    </noscript>
+    <script type="text/javascript">
+      // show an error message if the app loading takes more than 4 sec
+      window.onload = function () {
+        setTimeout(showError, 4000);
+      };
+      function showError() {
+        const errorElm = document.getElementById('jhipster-error');
+        if (errorElm?.style) {
+          errorElm.style.display = 'block';
+        }
+      }
+    </script>
+    <script src="runtime.99882c57dad26e21.js" type="module"></script>
+    <script src="polyfills.e59bafe72871a610.js" type="module"></script>
+    <script src="main.bc55bb43846102b4.js" type="module"></script>
+  </body>
+</html>

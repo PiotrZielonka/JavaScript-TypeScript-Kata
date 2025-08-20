@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tip Calculator</title>
+    <style>
+      body { font-family: "Segoe UI", Tahoma, sans-serif; background:#eef2f7; margin:0; padding:20px; }
+      .container { max-width:500px; margin:20px auto; padding:20px; background:#fff; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; }
+      button { background:#007bff; color:#fff; border:none; padding:10px 16px; margin:5px; border-radius:4px; cursor:pointer; transition:background 0.3s; }
+      button:hover { background:#0056b3; }
+      input, textarea, select { width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:4px;
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="number" id="bill" placeholder="Bill" />
+      <input type="number" id="tip" placeholder="Tip %" />
+      <p id="total"></p>
+    </div>
+    <script>
+      const bill = document.getElementById('bill');
+      const tip = document.getElementById('tip');
+      const total = document.getElementById('total');
+      function calc() {
+        const b = parseFloat(bill.value) || 0;
+        const t = parseFloat(tip.value) || 0;
+        total.textContent = 'Total: ' + (b + (b * t) / 100).toFixed(2);
+      }
+      bill.addEventListener('input', calc);
+      tip.addEventListener('input', calc);
+    </script>
+  </body>
+</html>
