@@ -1,265 +1,112 @@
-# JavascriptTypescriptKata
+# JavaScript & TypeScript Kata – 50 Mini-Apps Showing the Key Differences between Java & JavaScript
 
-This application was generated using JHipster 8.9.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v8.9.0](https://www.jhipster.tech/documentation-archive/v8.9.0).
+🔗 **Live demo:** [GitHub Pages](https://piotrzielonka.github.io/JavaScript-TypeScript-Kata/)
 
-## Project Structure
+Each kata is built in both:
 
-Node is required for generation and recommended for development. `package.json` is always generated for a better development experience with prettier, commit hooks, scripts and so on.
+- **Vanilla JavaScript** (plain JS, no frameworks)
+- **Angular + TypeScript** (typed, structured, framework-based)
 
-In the project root, JHipster generates configuration files for tools like git, prettier, eslint, husky, and others that are well known and you can find references in the web.
+This lets you **compare both approaches side by side** and build instinct in two languages at once..
 
-`/src/*` structure follows default Java structure.
+---
 
-- `.yo-rc.json` - Yeoman configuration file
-  JHipster configuration is stored in this file at `generator-jhipster` key. You may find `generator-jhipster-*` for specific blueprints configuration.
-- `.yo-resolve` (optional) - Yeoman conflict resolver
-  Allows to use a specific action when conflicts are found skipping prompts for files that matches a pattern. Each line should match `[pattern] [action]` with pattern been a [Minimatch](https://github.com/isaacs/minimatch#minimatch) pattern and action been one of skip (default if omitted) or force. Lines starting with `#` are considered comments and are ignored.
-- `.jhipster/*.json` - JHipster entity configuration files
+## 🎯 Why this project?
 
-- `npmw` - wrapper to use locally installed npm.
-  JHipster installs Node and npm locally using the build tool by default. This wrapper makes sure npm is installed locally and uses it avoiding some differences different versions can cause. By using `./npmw` instead of the traditional `npm` you can configure a Node-less environment to develop or test your application.
-- `/src/main/docker` - Docker configurations for the application and services that the application depends on
+Coming from the Java language, learning JavaScript often feels like hitting a wall. This project hacks that learning curve.
 
-## Development
+🧩 Kata = mini-apps → Each kata is a working mini-application, so you practice with real code, not just theory.
 
-The build system will install automatically the recommended version of Node and npm.
+⚖️ Vanilla JS vs Angular + TS → The same challenge is solved twice, letting you directly compare approaches.
 
-We provide a wrapper to launch npm.
-You will only need to run this command when dependencies change in [package.json](package.json).
+🧠 Instinct-building training → Focus on the concepts Java doesn’t have, until they become second nature.
 
-```
-./npmw install
-```
+If you already know Java, these kata give you the fastest way to bridge the gap to JavaScript and Angular.
 
-We use npm scripts and [Angular CLI][] with [Webpack][] as our build system.
+---
 
-Run the following commands in two separate terminals to create a blissful development experience where your browser
-auto-refreshes when files change on your hard drive.
+## 🔥 Top 12 JavaScript Pitfalls for Java Developers
 
-```
-./mvnw
-./npmw start
-```
+These kata focus on the areas where Java and JavaScript differ the most:
 
-Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
-specifying a newer version in [package.json](package.json). You can also run `./npmw update` and `./npmw install` to manage dependencies.
-Add the `help` flag on any command to see how you can use it. For example, `./npmw help update`.
+1. let vs var vs const differences
+2. Dynamic typing (JS) vs static typing (TS)
+3. null vs undefined
+4. Scope, Scope Chain, Hoisting, Closure
+5. JavaScript as a prototype-based & functional language (vs class-based OOP in Java)
+6. No privacy in JS (private only in TS, in JS everything is public)
+7. Different contexts of `this`
+8. Arrow functions
+9. call, apply, bind (legacy JavaScript)
+10. Truthy / Falsy values
+11. == vs === pitfalls
+12. Asynchrony: setTimeout, setInterval, event loop, Promise, async/await
 
-The `./npmw run` command will list all the scripts available to run for this project.
+---
 
-### PWA Support
+## 📂 Project Structure
 
-JHipster ships with PWA (Progressive Web App) support, and it's turned off by default. One of the main components of a PWA is a service worker.
+- **Angular + TypeScript kata**: src/main/webapp/app/entities/kata/list
+- **Vanilla JavaScript kata**: src/main/webapp/content/kata_js
 
-The service worker initialization code is disabled by default. To enable it, uncomment the following code in `src/main/webapp/app/app.config.ts`:
+💡 Best results: Use **two monitors** — run the app and compare code in JS vs TS/Angular side by side.
 
-```typescript
-ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
-```
+---
 
-### Managing dependencies
+## 🛠️ How to Run
 
-For example, to add [Leaflet][] library as a runtime dependency of your application, you would run following command:
+### GitHub Pages demo:
 
-```
-./npmw install --save --save-exact leaflet
-```
+👉 The **frontend-only version** is available on GitHub Pages (link above).  
+⚠️ Backend logic (like user management) is **not deployed** on Github Pages. It works only locally.
 
-To benefit from TypeScript type definitions from [DefinitelyTyped][] repository in development, you would run following command:
+---
 
-```
-./npmw install --save-dev --save-exact @types/leaflet
-```
+## 🧪 Running the Application Locally
 
-Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-Edit [src/main/webapp/app/app.config.ts](src/main/webapp/app/app.config.ts) file:
+To run the full version (with backend and user logic), install the following prerequisites:
 
-```
-import 'leaflet/dist/leaflet.js';
-```
+| Tool        | Version                              |
+| ----------- | ------------------------------------ |
+| Docker      | 28.0.4 (Desktop)                     |
+| Java        | OpenJDK 17                           |
+| Maven       | 3.8.1                                |
+| Node.js     | 22.18.0 LTS                          |
+| H2 Database | Installed automatically (local file) |
+| JHipster    | 8.9.0                                |
 
-Edit [src/main/webapp/content/scss/vendor.scss](src/main/webapp/content/scss/vendor.scss) file:
+### Start the app locally:
 
-```
-@import 'leaflet/dist/leaflet.css';
+```bash
+mvnw
 ```
 
-Note: There are still a few other things remaining to do for Leaflet that we won't detail here.
+This starts the backend (Spring Boot + JHipster) and the Angular frontend.
 
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
+🔑 Optional: User Logic Training with JHipster
 
-### Using Angular CLI
+Besides kata, this project also includes modern JHipster user management logic, such as:
 
-You can also use [Angular CLI][] to generate some custom client code.
+AbstractAuditingEntity → automatic auditing (who/when changed data),
 
-For example, the following command:
+Role & authority management,
 
-```
-ng generate component my-component
-```
+Audit fields in entities.
 
-will generate few files:
+This logic is disabled in the GitHub Pages demo, since it requires a backend.
 
-```
-create src/main/webapp/app/my-component/my-component.component.html
-create src/main/webapp/app/my-component/my-component.component.ts
-update src/main/webapp/app/app.config.ts
-```
+👉 To enable it locally for training:
 
-## Building for production
+Open:
 
-### Packaging as jar
+src/main/webapp/app/layouts/navbar/navbar.component.html
 
-To build the final jar and optimize the JavascriptTypescriptKata application for production, run:
+Uncomment the user account section.
 
-```
-./mvnw -Pprod clean verify
-```
+Run the project locally with backend support.
 
-This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
-To ensure everything worked, run:
+💡 This way, you can also practice JHipster’s latest user logic strategy (auditing, authentication, roles, permissions) alongside your kata training.
 
-```
-java -jar target/*.jar
-```
+👤 About the Project
 
-Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
-
-Refer to [Using JHipster in production][] for more details.
-
-### Packaging as war
-
-To package your application as a war in order to deploy it to an application server, run:
-
-```
-./mvnw -Pprod,war clean verify
-```
-
-### JHipster Control Center
-
-JHipster Control Center can help you manage and control your application(s). You can start a local control center server (accessible on http://localhost:7419) with:
-
-```
-docker compose -f src/main/docker/jhipster-control-center.yml up
-```
-
-## Testing
-
-### Spring Boot tests
-
-To launch your application's tests, run:
-
-```
-./mvnw verify
-```
-
-### Client tests
-
-Unit tests are run by [Jest][]. They're located near components and can be run with:
-
-```
-./npmw test
-```
-
-## Others
-
-### Code quality using Sonar
-
-Sonar is used to analyse code quality. You can start a local Sonar server (accessible on http://localhost:9001) with:
-
-```
-docker compose -f src/main/docker/sonar.yml up -d
-```
-
-Note: we have turned off forced authentication redirect for UI in [src/main/docker/sonar.yml](src/main/docker/sonar.yml) for out of the box experience while trying out SonarQube, for real use cases turn it back on.
-
-You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the maven plugin.
-
-Then, run a Sonar analysis:
-
-```
-./mvnw -Pprod clean verify sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
-```
-
-If you need to re-run the Sonar phase, please be sure to specify at least the `initialize` phase since Sonar properties are loaded from the sonar-project.properties file.
-
-```
-./mvnw initialize sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
-```
-
-Additionally, Instead of passing `sonar.password` and `sonar.login` as CLI arguments, these parameters can be configured from [sonar-project.properties](sonar-project.properties) as shown below:
-
-```
-sonar.login=admin
-sonar.password=admin
-```
-
-For more information, refer to the [Code quality page][].
-
-### Docker Compose support
-
-JHipster generates a number of Docker Compose configuration files in the [src/main/docker/](src/main/docker/) folder to launch required third party services.
-
-For example, to start required services in Docker containers, run:
-
-```
-docker compose -f src/main/docker/services.yml up -d
-```
-
-To stop and remove the containers, run:
-
-```
-docker compose -f src/main/docker/services.yml down
-```
-
-[Spring Docker Compose Integration](https://docs.spring.io/spring-boot/reference/features/dev-services.html) is enabled by default. It's possible to disable it in application.yml:
-
-```yaml
-spring:
-  ...
-  docker:
-    compose:
-      enabled: false
-```
-
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a Docker image of your app by running:
-
-```sh
-npm run java:docker
-```
-
-Or build a arm64 Docker image when using an arm64 processor os like MacOS with M1 processor family running:
-
-```sh
-npm run java:docker:arm64
-```
-
-Then run:
-
-```sh
-docker compose -f src/main/docker/app.yml up -d
-```
-
-For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the Docker Compose sub-generator (`jhipster docker-compose`), which is able to generate Docker configurations for one or several JHipster applications.
-
-## Continuous Integration (optional)
-
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
-
-[JHipster Homepage and latest documentation]: https://www.jhipster.tech
-[JHipster 8.9.0 archive]: https://www.jhipster.tech/documentation-archive/v8.9.0
-[Using JHipster in development]: https://www.jhipster.tech/documentation-archive/v8.9.0/development/
-[Using Docker and Docker-Compose]: https://www.jhipster.tech/documentation-archive/v8.9.0/docker-compose
-[Using JHipster in production]: https://www.jhipster.tech/documentation-archive/v8.9.0/production/
-[Running tests page]: https://www.jhipster.tech/documentation-archive/v8.9.0/running-tests/
-[Code quality page]: https://www.jhipster.tech/documentation-archive/v8.9.0/code-quality/
-[Setting up Continuous Integration]: https://www.jhipster.tech/documentation-archive/v8.9.0/setting-up-ci/
-[Node.js]: https://nodejs.org/
-[NPM]: https://www.npmjs.com/
-[Webpack]: https://webpack.github.io/
-[BrowserSync]: https://www.browsersync.io/
-[Jest]: https://jestjs.io
-[Leaflet]: https://leafletjs.com/
-[DefinitelyTyped]: https://definitelytyped.org/
-[Angular CLI]: https://cli.angular.io/
+This project is designed as a hands-on training path — 50 kata (mini-apps) that highlight the key differences between Java and JavaScript. If this helps you — feel free to ⭐ the repo or share it with others.
