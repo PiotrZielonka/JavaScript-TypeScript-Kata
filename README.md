@@ -1,6 +1,6 @@
 # JavaScript & TypeScript Kata – 50 Mini-Apps Showing the Key Differences between Java & JavaScript
 
-🔗 **Live demo:** [GitHub Pages](https://piotrzielonka.github.io/JavaScript-TypeScript-Kata/)
+🔗 **Live App:** [GitHub Pages](https://piotrzielonka.github.io/JavaScript-TypeScript-Kata/)
 
 Each kata is built in both:
 
