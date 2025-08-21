@@ -1,19 +1,50 @@
 {
   "home": {
-    "title": "Welcome, Java Hipster!",
-    "subtitle": "This is your homepage",
-    "logged": {
-      "message": "You are logged in as user \"{{username}}\"."
+    "title": "JavaScript & TypeScript Kata – 50 mini-apps",
+    "hero": {
+      "title": "JavaScript & TypeScript Kata – 50 mini-apps",
+      "subtitle": "50 mini-app challenges covering key differences between JavaScript and Java. Each kata is available in Vanilla JS and in Angular + TypeScript, letting you train both approaches in parallel and build instinct in two programming languages."
     },
-    "question": "If you have any question on JHipster:",
-    "link": {
-      "homepage": "JHipster homepage",
-      "stackoverflow": "JHipster on Stack Overflow",
-      "bugtracker": "JHipster bug tracker",
-      "chat": "JHipster public chat room",
-      "follow": "follow @jhipster on Twitter"
+    "cta": {
+      "start": "Start – go to Kata",
+      "how": "How it works",
+      "browse": "Browse all Kata"
     },
-    "like": "If you like JHipster, don't forget to give us a star on",
-    "github": "GitHub"
+    "props": {
+      "miniapps": {
+        "title": "Kata = mini-apps",
+        "desc": "Each topic is a working mini-app: you train through real code and UI interaction, not just theory."
+      },
+      "compare": {
+        "title": "Vanilla JS vs Angular + TS",
+        "desc": "The same challenge in plain JS and in Angular + TypeScript to clearly see the difference between a framework and the raw language."
+      },
+      "instinct": {
+        "title": "Training that builds instinct",
+        "desc": "A step-by-step training path you master the building blocks missing in Java until JS/TS concepts become second nature."
+      }
+    },
+    "how": {
+      "title": "How to use the kata",
+      "step1": "Pick a topic (mini-app) from the Kata list.",
+      "step2": "Angular + TypeScript versions are located at:",
+      "step3": "Vanilla JavaScript versions are located at:",
+      "step4": "For best results, use two monitors watch the app in action and compare both codebases side by side."
+    },
+    "sample": {
+      "title": "TOP 12 JavaScript pitfalls for Java developers",
+      "item1": "let vs var vs const differences",
+      "item2": "Dynamic typing (JS) vs static typing (TS)",
+      "item3": "null vs undefined",
+      "item4": "Scope, Scope Chain, Hoisting, Closure",
+      "item5": "JavaScript as a prototype-based & functional language (vs class-based OOP in Java)",
+      "item6": "No privacy in JS (private only in TS, in JS everything is public)",
+      "item7": "Different contexts of this",
+      "item8": "Arrow functions",
+      "item9": "call, apply, bind (legacy JavaScript)",
+      "item10": "Truthy / Falsy values",
+      "item11": "== vs === pitfalls",
+      "item12": "Asynchrony: setTimeout, setInterval, event loop, Promise, async/await"
+    }
   }
 }

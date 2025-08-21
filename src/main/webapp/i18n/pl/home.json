@@ -1,19 +1,50 @@
 {
   "home": {
-    "title": "Witamy, Java Hipsterze!",
-    "subtitle": "To jest twoja strona domowa",
-    "logged": {
-      "message": "Jesteś zalogowany jako użytkownik \"{{username}}\"."
+    "title": "JavaScript & TypeScript Kata – 50 mini-aplikacji",
+    "hero": {
+      "title": "JavaScript & TypeScript Kata – 50 mini-aplikacji",
+      "subtitle": "50 mini-aplikacji (kata), które obejmują kluczowe różnice między JavaScriptem a Javą. Każde kata dostępne w wersji Vanilla JS oraz w Angular + TypeScript, co pozwala trenować oba podejścia równocześnie i szybciej wypracować instynkt w dwóch językach programowania."
     },
-    "question": "Jeśli masz jakiekolwiek pytania na temat JHipster:",
-    "link": {
-      "homepage": "Strona domowa JHipster",
-      "stackoverflow": "JHipster na Stack Overflow",
-      "bugtracker": "JHipster bug tracker",
-      "chat": "Publiczny chat room JHipster",
-      "follow": "skontaktuj się z @jhipster na Twitterze"
+    "cta": {
+      "start": "Start – przejdź do Kata",
+      "how": "Jak to działa",
+      "browse": "Przeglądaj wszystkie Kata"
     },
-    "like": "Jeśli lubisz JHipster, nie zapomnij dać nam gwiazdki na",
-    "github": "GitHubie"
+    "props": {
+      "miniapps": {
+        "title": "Kata = mini-aplikacja",
+        "desc": "Nie chodzi o samo pokazanie mini aplikacji, ale o naukę żonglowania wszystkimi aspektami JavaScript. Każde kata to inna strategia kodowania, którą trenujesz w praktyce."
+      },
+      "compare": {
+        "title": "Vanilla JS vs Angular + TS",
+        "desc": "To samo wyzwanie w czystym JS oraz w Angular + TypeScript aby jasno zobaczyć różnicę między frameworkiem a czystym językiem."
+      },
+      "instinct": {
+        "title": "Trening prowadzący do instynktu",
+        "desc": "Zestaw kata to ścieżka treningu krok po kroku poznajesz „klocki”, których w Javie nie ma, aż koncepcje JS/TS stają się naturalnym odruchem."
+      }
+    },
+    "how": {
+      "title": "Jak korzystać z kata",
+      "step1": "Wybierz temat (mini-apkę) z listy Kata.",
+      "step2": "Wersje Angular + TypeScript znajdziesz w ścieżce:",
+      "step3": "Wersje czystego JavaScript znajdziesz w ścieżce:",
+      "step4": "Najlepszy efekt osiągniesz na dwóch ekranach i gdy zrozumiesz strategię działania każdego kata. Obserwuj działanie mini-aplikacji i równolegle porównuj kod obu podejść."
+    },
+    "sample": {
+      "title": "TOP 12 pułapek JavaScript dla programisty Javy",
+      "item1": "Różnice między let, var, const",
+      "item2": "Typowanie dynamiczne (JS) vs statyczne (TS)",
+      "item3": "null vs undefined",
+      "item4": "Scope, Scope Chain, Hoisting, Closure",
+      "item5": "JavaScript jako język prototypowy i funkcyjny (vs klasowe OOP w Javie)",
+      "item6": "Brak prywatności w JS (modyfikatory private tylko w TS, w JS wszystko publiczne)",
+      "item7": "Różne konteksty this",
+      "item8": "Arrow functions",
+      "item9": "call, apply, bind (legacy JavaScript)",
+      "item10": "Truthy / Falsy values",
+      "item11": "== vs === – pułapki porównań",
+      "item12": "Asynchroniczność: setTimeout, setInterval, event loop, Promise, async/await"
+    }
   }
 }
